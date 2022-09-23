@@ -1,0 +1,92 @@
+<html>
+	<head>
+		<link href="css/styles.css?"
+		      rel="stylesheet"
+		      type="text/css" >
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="js/magnific.js"></script>
+		<style media="" data-href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">/* Magnific Popup CSS */
+
+</style>
+		<script>
+			$(document).ready(function () {
+				$('.container').mouseenter(function () {
+					$('.card').stop().animate({
+						top: '-90px'
+					}, 'slow');
+				}).mouseleave(function () {
+				$('.card').stop().animate({
+					top: 0
+					}, 'slow');
+				});
+				
+				$('.container').click(function() {
+					$('.wish').slideUp();
+					$.magnificPopup.open({
+						items: {
+							src: 'assets/test.png'
+						},
+						delegate: 'a',
+						type: 'image',
+						removalDelay: 500, //delay removal by X to allow out-animation
+						callbacks: {
+							beforeOpen: function() {
+								// just a hack that adds mfp-anim class to markup 
+								this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
+								this.st.mainClass = 'mfp-newpaper';//this.st.el.attr('data-effect');
+							}
+						},
+						closeOnContentClick: true,
+						midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
+
+						
+						
+						
+						
+						
+						
+						/*type: 'image',
+						closeBtnInside: false,
+						closeOnContentClick: false,
+						callbacks: {
+							open: function() {
+								var self = this;
+								self.wrap.on('click.pinhandler', 'img', function() {
+									self.wrap.toggleClass('mfp-force-scrollbars');
+								});
+							},
+							beforeClose: function() {
+								this.wrap.off('click.pinhandler');
+								this.wrap.removeClass('mfp-force-scrollbars');
+							}
+						}
+
+					//$.magnificPopup.close();		*/			
+					});
+				});
+			});
+	
+			
+		</script>
+	</head>
+	<body>
+		<div class="container">  
+			<div class="valentines">
+				<div class="envelope">
+					<div class="front"></div>							
+					<div class="card wish" data-effect="mfp-newpaper">	
+						<div class="text">Happy</br> Birthday</br> Day<br/> Sarvesh!!!</div>	
+						<div class="hearts">
+							<div class="one"></div>
+							<div class="two"></div>
+							<div class="three"></div>
+							<div class="four"></div>
+							<div class="five"></div>							
+						</div>
+					</div>					
+				</div>
+			</div>
+			<div class="shadow"></div>
+		</div>
+	<body>
+</html>
